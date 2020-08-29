@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/curve_edit/ValueInspect.gd" type="Script" id=1]
+
+[node name="ValueInspect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 30 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -10.0
+margin_right = 41.0
+rect_min_size = Vector2( 50, 20 )
+text = "Vector"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vBox" type="SpinBox" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -12.0
+margin_right = -20.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 100, 24 )
+min_value = -9.22337e+18
+max_value = 9.22337e+18
+step = 0.001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="vBox" to="." method="_on_vBox_value_changed"]
+[connection signal="value_changed" from="vBox" to="." method="_on_xBox_value_changed"]

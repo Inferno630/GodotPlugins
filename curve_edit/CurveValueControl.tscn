@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/curve_edit/CurveValueControl.gd" type="Script" id=1]
+
+[node name="CurveControl" type="VBoxContainer"]
+margin_top = 0.561226
+margin_right = 100.0
+margin_bottom = 60.5612
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

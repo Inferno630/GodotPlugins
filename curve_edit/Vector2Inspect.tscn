@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/curve_edit/Vector2Inspect.gd" type="Script" id=1]
+
+[node name="Vector2Inspect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 200, 60 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -10.0
+margin_right = 41.0
+rect_min_size = Vector2( 50, 20 )
+text = "Vector"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="valueContain" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -30.0
+margin_right = -20.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 100, 60 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="xContain" type="HBoxContainer" parent="valueContain"]
+margin_top = 4.0
+margin_right = 100.0
+margin_bottom = 28.0
+alignment = 2
+
+[node name="xLabel" type="Label" parent="valueContain/xContain"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 22.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "x"
+align = 1
+valign = 1
+
+[node name="xBox" type="SpinBox" parent="valueContain/xContain"]
+margin_left = 26.0
+margin_right = 100.0
+margin_bottom = 24.0
+min_value = -9.22337e+18
+max_value = 9.22337e+18
+step = 0.001
+
+[node name="yContain" type="HBoxContainer" parent="valueContain"]
+margin_top = 32.0
+margin_right = 100.0
+margin_bottom = 56.0
+alignment = 2
+
+[node name="yLabel" type="Label" parent="valueContain/yContain"]
+margin_left = 15.0
+margin_top = 5.0
+margin_right = 22.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0.145098, 0.784314, 0, 1 )
+text = "y"
+align = 1
+valign = 1
+
+[node name="yBox" type="SpinBox" parent="valueContain/yContain"]
+margin_left = 26.0
+margin_right = 100.0
+margin_bottom = 24.0
+min_value = -9.22337e+18
+max_value = 9.22337e+18
+step = 0.001
+[connection signal="value_changed" from="valueContain/xContain/xBox" to="." method="_on_xBox_value_changed"]
+[connection signal="value_changed" from="valueContain/yContain/yBox" to="." method="_on_yBox_value_changed"]
