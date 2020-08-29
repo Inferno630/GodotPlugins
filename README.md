@@ -15,13 +15,13 @@ This does not apply to Curve2D or Curve3D.
 Theoretically, follow this https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html
 Though it doesn't seem to actually find the subfolders?
 
-Otherwise, go to Project->Project Settings->Plugins (tab)->Create
-And fill in as follows:
-Plugin Name: CurveEdit
-Subfolder: curve_edit
-Author: Inferno
-Version: 1.0
-Script Name: CurveEdit.gd
+Otherwise, go to Project->Project Settings->Plugins (tab)->Create <br/>
+And fill in as follows: <br/>
+Plugin Name: CurveEdit <br/>
+Subfolder: curve_edit <br/>
+Author: Inferno <br/>
+Version: 1.0 <br/>
+Script Name: CurveEdit.gd <br/>
 
 Then when the engine makes an actual addons/curve_edit folder, copy the files from the downloaded plugin's curve_edit folder into the project via the system's file browser.
 Lastly, go to Project->Project->Settings->Plugins (tab) and Enable CurveEdit.
