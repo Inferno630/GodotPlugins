@@ -31,9 +31,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -120.0
-margin_top = -30.0
+margin_top = -56.0
 margin_right = -20.0
-margin_bottom = 30.0
+margin_bottom = 56.0
 rect_min_size = Vector2( 100, 60 )
 alignment = 1
 __meta__ = {
@@ -41,8 +41,9 @@ __meta__ = {
 }
 
 [node name="xContain" type="HBoxContainer" parent="valueContain"]
+margin_top = 16.0
 margin_right = 100.0
-margin_bottom = 24.0
+margin_bottom = 40.0
 alignment = 2
 
 [node name="xLabel" type="Label" parent="valueContain/xContain"]
@@ -64,9 +65,9 @@ max_value = 9.22337e+18
 step = 0.001
 
 [node name="yContain" type="HBoxContainer" parent="valueContain"]
-margin_top = 28.0
+margin_top = 44.0
 margin_right = 100.0
-margin_bottom = 52.0
+margin_bottom = 68.0
 alignment = 2
 
 [node name="yLabel" type="Label" parent="valueContain/yContain"]
@@ -88,9 +89,9 @@ max_value = 9.22337e+18
 step = 0.001
 
 [node name="zContain" type="HBoxContainer" parent="valueContain"]
-margin_top = 56.0
+margin_top = 72.0
 margin_right = 100.0
-margin_bottom = 80.0
+margin_bottom = 96.0
 alignment = 2
 
 [node name="zLabel" type="Label" parent="valueContain/zContain"]

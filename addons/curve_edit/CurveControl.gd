@@ -23,6 +23,9 @@ func change_in(vector, id):
 func change_out(vector, id):
 	curve.set_point_out(id, vector)
 
+func change_tilt(tilt, id):
+	curve.set_point_tilt(id, tilt)
+
 # Set the curve that this controller manipulates, and generate the Inspector controls
 func set_curve(newCurve):
 	curve = newCurve
@@ -110,7 +113,11 @@ func add_point_inspector(index):
 	# Add the CurvePointInspector
 	var i = CurvePointInspector.instance()
 	i.setup_inspector(is2D)
-	i.set_point_vals(curve.get_point_position(index), curve.get_point_in(index), curve.get_point_out(index))
+	if is2D:
+		i.set_2D_point_vals(curve.get_point_position(index), curve.get_point_in(index), curve.get_point_out(index))
+	else:
+		i.set_3D_point_vals(curve.get_point_position(index), curve.get_point_in(index), curve.get_point_out(index), curve.get_point_tilt(index))
+		i.connect("point_tilt_changed", self, "change_tilt", [index])
 	i.connect("point_pos_changed", self, "change_pos", [index])
 	i.connect("point_in_changed", self, "change_in", [index])
 	i.connect("point_out_changed", self, "change_out", [index])

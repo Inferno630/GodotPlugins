@@ -26,6 +26,10 @@ func change_left_angle(angle, id):
 func change_right_angle(angle, id):
 	curve.set_point_right_tangent(id, angle)
 
+func change_tilt(tilt, id):
+	curve.set_point_tilt(id, tilt)
+
+
 # Set the curve that this controller manipulates, and generate the Inspector controls
 func set_curve(newCurve):
 	curve = newCurve
@@ -72,7 +76,11 @@ func add_point_inspector(index):
 	
 	# Add the CurvePointInspector
 	var i = CurvePointInspector.instance()
-	i.set_point_vals(curve.get_point_position(index).x, curve.get_point_position(index).y, curve.get_point_left_tangent(index), curve.get_point_right_tangent(index))
+	if curve is Curve3D:
+		i.set_point_vals(curve.get_point_position(index).x, curve.get_point_position(index).y, curve.get_point_left_tangent(index), curve.get_point_right_tangent(index), curve.get_point_tilt(index))
+		i.connect("tilt_changed", self, "change_tilt", [index])
+	else:
+		i.set_point_vals(curve.get_point_position(index).x, curve.get_point_position(index).y, curve.get_point_left_tangent(index), curve.get_point_right_tangent(index))
 	i.connect("point_offset_changed", self, "change_offset", [index])
 	i.connect("point_value_changed", self, "change_value", [index])
 	i.connect("angle_left_changed", self, "change_left_angle", [index])
